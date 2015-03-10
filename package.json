@@ -1,0 +1,19 @@
+{
+  "name": "yapi.js",
+  "version": "0.0.0",
+  "description": "yet another promise implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "keywords": [
+    "promise"
+  ],
+  "author": "loveky",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-jasmine": "^0.3.5"
+  }
+}
