@@ -45,6 +45,21 @@ var getJSON = function(url) {
 ```
 Check the [example.html](https://github.com/loveky/yapi.js/blob/master/example.html) for a full demo which uses the about XHR2 wrapper.
 
+### Option 2
+Manualy create a deferred object and resolve/reject it ondemand.
+```javascript
+var getUserInfo = function () {
+  var deferred = YAPI.defer();
+  
+  // fetch user information throught AJAX
+  deferred.resolve(); // if AJAX request succeed
+  // or
+  deferred.reject(); // if something wrong
+  
+  return deferred.promise;
+};
+```
+
 ## Todos
 - [ ] refine readme
   - [ ] add usage information
