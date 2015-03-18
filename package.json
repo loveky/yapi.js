@@ -1,14 +1,17 @@
 {
   "name": "yapi.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "yet another promise implementation",
-  "main": "lib/yapi.js",
+  "main": "./lib/yapi.js",
   "scripts": {
     "spec": "promises-aplus-tests test/spec-adapter",
     "test": "karma start"
   },
   "keywords": [
-    "promise"
+    "promise",
+    "async",
+    "Promise/A+",
+    "deferred"
   ],
   "author": "loveky",
   "license": "ISC",
