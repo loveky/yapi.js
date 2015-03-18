@@ -13,7 +13,7 @@
     <script src="./lib/yapi.js"></script>
     <script>
       var getJSON = function(url) {
-        var promise = new RSVP.Promise(function(resolve, reject){
+        var promise = YAPI.createPromise(function(resolve, reject){
           var client = new XMLHttpRequest();
           client.open("GET", url);
           client.onreadystatechange = handler;
