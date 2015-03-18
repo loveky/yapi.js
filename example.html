@@ -2,10 +2,99 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Example</title>
+    <title>example of using YAPI.js to fetch github information</title>
   </head>
   <body>
-
+    <h2>Find the changed files of the last commit in master branch of a random user repo</h2>
+    <h5>Check the page source to see how it works</h5>
+    <input id="userIdInput" type="text" placeholder="GitHub user id"><button id="findButton">Find</button>
+    <br/>
+    <div id="result"></div>
     <script src="./lib/yapi.js"></script>
+    <script>
+      var getJSON = function(url) {
+        var promise = new RSVP.Promise(function(resolve, reject){
+          var client = new XMLHttpRequest();
+          client.open("GET", url);
+          client.onreadystatechange = handler;
+          client.responseType = "json";
+          client.setRequestHeader("Accept", "application/json");
+          client.send();
+
+          function handler() {
+            if (this.readyState === this.DONE) {
+              if (this.status === 200) { resolve(this.response); }
+              else { reject(this); }
+            }
+          };
+        });
+
+        return promise;
+      };
+
+      var getUserRepos = function (userId) {
+        return getJSON("https://api.github.com/users/" + userId + "/repos?sort=pushed");
+      };
+
+      var getRepoBranches = function (repos) {
+        var randomRepo = repos[Math.floor(Math.random() * repos.length)];
+        var message = "Found " + repos.length + " repo. Pick up [" + randomRepo.full_name + "]"; 
+        log(message);
+
+        return getJSON("https://api.github.com/repos/" + randomRepo.full_name + "/branches")
+      };
+
+      var getChangedFiles = function (branches) {
+        var message = "Found " + branches.length + " branches";
+        var masterBranch = branches.filter(function (branch) {return branch.name === "master"})[0];
+        log(message);
+
+        return getJSON(masterBranch.commit.url);
+      };
+
+      var findChange = function (commit) {
+        log("Changes in last commit of master:");
+        commit.files.forEach(function (file) {
+          log(file.status + " " + file.filename)
+        });
+      };
+
+      var input  = document.getElementById("userIdInput");
+      var button = document.getElementById("findButton");
+      var result = document.getElementById("result"); 
+
+      var log = function (message) {
+        var p = document.createElement("p");
+        p.appendChild(document.createTextNode(message));
+        result.appendChild(p);
+      };
+
+      var clearLog = function () {
+        result.innerHTML = "";
+      };
+
+      var errorHandler = function (error) {
+        log(error);
+      };
+
+      var createErrorHandler = function (message) {
+        return function () {
+          log(message);
+        };
+      };
+
+      var clickHandler = function () {
+        var userId = input.value.replace(/(^\s*|\s*$)/, "");
+        if (userId !== "") {
+          clearLog();
+          getUserRepos(userId)
+            .then(getRepoBranches)
+            .then(getChangedFiles)
+            .then(findChange, createErrorHandler("Something Wrong!"));
+        }
+      };
+
+      button.addEventListener("click", clickHandler, false);
+    </script>
   </body>
 </html>
