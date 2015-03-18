@@ -2,8 +2,9 @@
   "name": "yapi.js",
   "version": "0.0.0",
   "description": "yet another promise implementation",
-  "main": "index.js",
+  "main": "lib/yapi.js",
   "scripts": {
+    "spec": "promises-aplus-tests test/spec-adapter",
     "test": "karma start"
   },
   "keywords": [
