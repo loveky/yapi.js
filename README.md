@@ -65,6 +65,12 @@ var getUserInfo = function () {
 };
 ```
 
+## Develop
+```shell
+npm test # run Promises/A+ Compliance Test Suite
+grunt build # jshint & generate min version
+```
+
 ## Todos
 - [ ] refine readme
   - [ ] add usage information
