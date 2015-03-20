@@ -3,7 +3,7 @@
          title="Promises/A+ 1.0 compliant" align="right" />
 </a>
 
-# YAPI.js
+# YAPI.js [![Build Status](https://travis-ci.org/loveky/yapi.js.svg?branch=master)](https://travis-ci.org/loveky/yapi.js)
 yet another [Promises/A+](https://promisesaplus.com/) implementation
 
 ## Usage
