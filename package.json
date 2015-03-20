@@ -4,8 +4,7 @@
   "description": "yet another promise implementation",
   "main": "./lib/yapi.js",
   "scripts": {
-    "spec": "promises-aplus-tests test/spec-adapter",
-    "test": "karma start"
+    "test": "promises-aplus-tests test/spec-adapter"
   },
   "keywords": [
     "promise",
