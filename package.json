@@ -1,7 +1,7 @@
 {
   "name": "yapi.js",
   "version": "0.0.1",
-  "description": "yet another promise implementation",
+  "description": "yet another Promise/A+ implementation",
   "main": "./lib/yapi.js",
   "scripts": {
     "test": "promises-aplus-tests test/spec-adapter"
@@ -12,12 +12,19 @@
     "Promise/A+",
     "deferred"
   ],
-  "author": "loveky",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loveky/yapi.js.git"
+  },
+  "author": "loveky <ylzcylx@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
     "karma-jasmine": "^0.3.5",
     "promises-aplus-tests": "^2.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/loveky/yapi.js/issues"
   }
 }
