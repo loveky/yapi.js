@@ -6,6 +6,13 @@
 # YAPI.js [![Build Status](https://travis-ci.org/loveky/yapi.js.svg?branch=master)](https://travis-ci.org/loveky/yapi.js)
 yet another [Promises/A+](https://promisesaplus.com/) implementation
 
+## Install
+### Bower
+`bower install -S yapi`
+
+### NPM
+`npm install --save yapi`
+
 ## Usage
 You can use two ways to create a promsie.
 
