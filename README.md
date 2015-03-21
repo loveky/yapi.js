@@ -4,7 +4,14 @@
 </a>
 
 # YAPI.js [![Build Status](https://travis-ci.org/loveky/yapi.js.svg?branch=master)](https://travis-ci.org/loveky/yapi.js)
-yet another [Promises/A+](https://promisesaplus.com/) implementation
+yet another [Promises/A+](https://promisesaplus.com/) implementation which works in both browser and node
+
+## Install
+### Bower
+`bower install -S yapi`
+
+### NPM
+`npm install --save yapi`
 
 ## Usage
 You can use two ways to create a promsie.
@@ -65,10 +72,18 @@ var getUserInfo = function () {
 };
 ```
 
+## Develop
+```shell
+npm test # run Promises/A+ Compliance Test Suite
+grunt build # jshint & generate min version
+```
+
 ## Todos
 - [ ] refine readme
   - [ ] add usage information
   - [x] add Promise/A+ logo after pass [Promises/A+ Compliance Test Suite](https://github.com/promises-aplus/promises-tests)
 - [x] provide minimized version
 - [ ] provide `YAPI.all` method
+- [ ] provide `promise.finally`
+- [ ] provide `promise.catch`
 - [x] test against [Promises/A+ Compliance Test Suite](https://github.com/promises-aplus/promises-tests)
