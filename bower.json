@@ -1,0 +1,24 @@
+{
+  "name": "yapi",
+  "version": "0.0.1",
+  "homepage": "https://github.com/loveky/yapi.js",
+  "authors": [
+    "loveky <ylzcylx@gmail.com>"
+  ],
+  "description": "yet another Promises/A+ implementation",
+  "main": "dist/yapi.min.js",
+  "keywords": [
+    "promise",
+    "async",
+    "Promise/A+",
+    "deferred"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
