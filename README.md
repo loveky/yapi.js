@@ -4,7 +4,7 @@
 </a>
 
 # YAPI.js [![Build Status](https://travis-ci.org/loveky/yapi.js.svg?branch=master)](https://travis-ci.org/loveky/yapi.js)
-yet another [Promises/A+](https://promisesaplus.com/) implementation
+yet another [Promises/A+](https://promisesaplus.com/) implementation which works in both browser and node
 
 ## Install
 ### Bower
@@ -84,4 +84,6 @@ grunt build # jshint & generate min version
   - [x] add Promise/A+ logo after pass [Promises/A+ Compliance Test Suite](https://github.com/promises-aplus/promises-tests)
 - [x] provide minimized version
 - [ ] provide `YAPI.all` method
+- [ ] provide `promise.finally`
+- [ ] provide `promise.catch`
 - [x] test against [Promises/A+ Compliance Test Suite](https://github.com/promises-aplus/promises-tests)
