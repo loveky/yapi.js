@@ -4,7 +4,9 @@ module.exports = function(config) {
 
     files: [
       'lib/yapi.js',
-      'test/*.js'
-    ]
+      'test/*_spec.js'
+    ],
+
+    browsers: ['Chrome']
   });
 };
