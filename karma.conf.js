@@ -4,6 +4,7 @@ module.exports = function(config) {
 
     files: [
       'lib/yapi.js',
+      'test/helper.js',
       'test/*_spec.js'
     ],
 
